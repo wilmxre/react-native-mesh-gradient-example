@@ -4,7 +4,7 @@ import { requireNativeComponent, ViewProps } from 'react-native';
 type MeshGradientProps = ViewProps & {
     width: number;
     height: number;
-    points: [number, number][];
+    points: number[][];
     colors: string[];
     background?: string;
     smoothsColors?: boolean;
