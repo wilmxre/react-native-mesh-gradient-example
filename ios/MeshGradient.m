@@ -18,4 +18,5 @@ RCT_EXPORT_VIEW_PROPERTY(background, NSString)
 RCT_EXPORT_VIEW_PROPERTY(smoothsColors, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(colorSpace, NSString)
 RCT_EXPORT_VIEW_PROPERTY(animationDuration, NSInteger)
+RCT_EXPORT_VIEW_PROPERTY(animationType, NSString)
 @end

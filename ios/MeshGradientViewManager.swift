@@ -88,6 +88,12 @@ class MeshGradientUIView: UIView {
     }
   }
 
+  @objc var animationType: String = "sine" {
+    didSet {
+      updateView()
+    }
+  }
+
   private func colorFromHexString(hexString: NSString) -> UIColor {
     var cString: String = hexString.trimmingCharacters(
       in: .whitespacesAndNewlines
@@ -137,7 +143,8 @@ class MeshGradientUIView: UIView {
       smoothsColors: smoothsColors,
       colorSpace: colorSpaceEnum,
       isAnimated: isAnimated,
-      animationDuration: animationDuration
+      animationDuration: animationDuration,
+      animationType: animationType
     )
 
     if hostingController == nil {

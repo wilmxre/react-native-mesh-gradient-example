@@ -12,6 +12,7 @@ type MeshGradientProps = ViewProps & {
   colorSpace?: "device" | "perceptual";
   isAnimated?: boolean;
   animationDuration?: number;
+  animationType?: "sine" | "easeInOut";
 };
 
 const MeshGradientNative =

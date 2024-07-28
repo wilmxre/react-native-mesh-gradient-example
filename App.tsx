@@ -5,12 +5,17 @@ import MeshGradient from "./MeshGradient";
 const MATRIX_DIMENSION = 3;
 
 export default function App() {
-  const points = [];
-  for (let i = 0; i < MATRIX_DIMENSION; i++) {
-    for (let j = 0; j < MATRIX_DIMENSION; j++) {
-      points.push([i / (MATRIX_DIMENSION - 1), j / (MATRIX_DIMENSION - 1)]);
-    }
-  }
+  const points = [
+    [0.0, 0.0],
+    [0.5, 0.0],
+    [1.0, 0.0],
+    [0.0, 0.3],
+    [0.7, 0.9],
+    [1.0, 0.5],
+    [0.0, 1.0],
+    [0.5, 1.0],
+    [1.0, 1.0],
+  ];
 
   const primaryColors = [
     "#E68369",
@@ -43,13 +48,14 @@ export default function App() {
         meshHeight={MATRIX_DIMENSION}
         style={styles.meshContainer}
         points={points}
-        primaryColors={secondaryColors}
+        primaryColors={primaryColors}
         secondaryColors={secondaryColors}
         background="#FFFFFF"
         smoothsColors={true}
         colorSpace="perceptual"
         isAnimated={true}
         animationDuration={5}
+        animationType="easeInOut"
       >
         {/* <Text style={styles.text}>Mesh Gradient</Text> */}
       </MeshGradient>
