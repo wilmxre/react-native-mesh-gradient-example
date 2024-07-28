@@ -25,15 +25,15 @@ export default function App() {
   ];
 
   const secondaryColors = [
-    "#694f96",
-    "#694f96",
-    "#E68369",
-    "#694f96",
-    "#a5bce8",
-    "#e4e8eb",
-    "#E68369",
-    "#a5bce8",
-    "#694f96",
+    "#000000",
+    "#000000",
+    "#000000",
+    "#FF9F0A",
+    "#FF453A",
+    "#FF9F0A",
+    "#5E5CE6",
+    "#000000",
+    "#30D158",
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function App() {
         meshHeight={MATRIX_DIMENSION}
         style={styles.meshContainer}
         points={points}
-        primaryColors={primaryColors}
+        primaryColors={secondaryColors}
         secondaryColors={secondaryColors}
         background="#FFFFFF"
         smoothsColors={true}
@@ -51,7 +51,7 @@ export default function App() {
         isAnimated={true}
         animationDuration={5}
       >
-        <Text style={styles.text}>Mesh Gradient</Text>
+        {/* <Text style={styles.text}>Mesh Gradient</Text> */}
       </MeshGradient>
     </View>
   );
@@ -66,14 +66,14 @@ const styles = StyleSheet.create({
   meshContainer: {
     justifyContent: "center",
     alignItems: "center",
-    width: 400,
-    height: 400,
+    width: "110%",
+    height: "110%",
     borderRadius: 12,
   },
   text: {
-    fontSize: 64,
+    fontSize: 72,
     fontWeight: "bold",
     textAlign: "center",
-    color: "black",
+    color: "white",
   },
 });
