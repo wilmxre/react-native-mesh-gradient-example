@@ -15,7 +15,7 @@ export default function App() {
     [1, 1],
   ];
 
-  const colors = [
+  const primaryColors = [
     "#fdab88",
     "#db0c36",
     "#db0c36",
@@ -27,6 +27,18 @@ export default function App() {
     "#7eb1a8",
   ];
 
+  const secondaryColors = [
+    "#E3A5C7",
+    "#694F8E",
+    "#694F8E",
+    "#B692C2",
+    "#B692C2",
+    "#B692C2",
+    "#694F8E",
+    "#694F8E",
+    "#694F8E",
+  ];
+
   const deviceWidth = Dimensions.get("screen").width;
   const deviceHeight = Dimensions.get("screen").height;
 
@@ -36,12 +48,15 @@ export default function App() {
         width={deviceWidth}
         height={deviceHeight}
         points={points}
-        colors={colors}
+        primaryColors={primaryColors}
+        secondaryColors={secondaryColors}
         background="#FFFFFF"
         smoothsColors={true}
         colorSpace="perceptual"
+        isAnimated={false}
+        animationDuration={5}
       />
-      <Text style={styles.text}>Mesh Gradient</Text>
+      {/* <Text style={styles.text}>Mesh Gradient</Text> */}
     </View>
   );
 }
@@ -57,6 +72,6 @@ const styles = StyleSheet.create({
     fontSize: 72,
     fontWeight: "bold",
     textAlign: "center",
-    color: "#3A3B36",
+    color: "white",
   },
 });

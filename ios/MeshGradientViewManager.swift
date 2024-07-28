@@ -46,9 +46,14 @@ class MeshGradientUIView: UIView {
     }
   }
 
-  @objc var colors: [NSString] = [] {
+  @objc var primaryColors: [NSString] = [] {
     didSet {
-      print("Colors set to \(colors)")
+      updateView()
+    }
+  }
+  
+  @objc var secondaryColors: [NSString] = [] {
+    didSet {
       updateView()
     }
   }
@@ -66,6 +71,18 @@ class MeshGradientUIView: UIView {
   }
 
   @objc var colorSpace: NSString = "device" {
+    didSet {
+      updateView()
+    }
+  }
+  
+  @objc var isAnimated: Bool = false {
+    didSet {
+      updateView()
+    }
+  }
+  
+  @objc var animationDuration: TimeInterval = 5 {
     didSet {
       updateView()
     }
@@ -100,7 +117,8 @@ class MeshGradientUIView: UIView {
     let pointsSIMD = points.map {
       SIMD2<Float>(Float(truncating: $0[0]), Float(truncating: $0[1]))
     }
-    let colorsSwiftUI = colors.map { Color(colorFromHexString(hexString: $0)) }
+    let primaryColorsSwiftUI = primaryColors.map { Color(colorFromHexString(hexString: $0)) }
+    let secondaryColorsSwiftUI = secondaryColors.map { Color(colorFromHexString(hexString: $0)) }
     let backgroundColor = Color(colorFromHexString(hexString: background))
     let colorSpaceEnum: Gradient.ColorSpace =
       colorSpace == "perceptual" ? .perceptual : .device
@@ -109,10 +127,13 @@ class MeshGradientUIView: UIView {
       width: width,
       height: height,
       points: pointsSIMD,
-      colors: colorsSwiftUI,
+      primaryColors: primaryColorsSwiftUI,
+      secondaryColors: secondaryColorsSwiftUI,
       background: backgroundColor,
       smoothsColors: smoothsColors,
-      colorSpace: colorSpaceEnum
+      colorSpace: colorSpaceEnum,
+      isAnimated: isAnimated,
+      animationDuration: animationDuration
     )
 
     if hostingController == nil {
