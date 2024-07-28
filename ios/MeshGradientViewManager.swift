@@ -28,13 +28,13 @@ class MeshGradientViewManager: RCTViewManager {
 class MeshGradientUIView: UIView {
   private var hostingController: UIHostingController<MeshGradientView>?
 
-  @objc var width: Int = 1 {
+  @objc var meshWidth: Int = 3 {
     didSet {
       updateView()
     }
   }
 
-  @objc var height: Int = 1 {
+  @objc var meshHeight: Int = 3 {
     didSet {
       updateView()
     }
@@ -71,12 +71,6 @@ class MeshGradientUIView: UIView {
   }
 
   @objc var colorSpace: NSString = "device" {
-    didSet {
-      updateView()
-    }
-  }
-
-  @objc var borderRadius: CGFloat = 0 {
     didSet {
       updateView()
     }
@@ -134,15 +128,14 @@ class MeshGradientUIView: UIView {
       colorSpace == "perceptual" ? .perceptual : .device
 
     let meshGradientView = MeshGradientView(
-      width: width,
-      height: height,
+      meshWidth: meshWidth,
+      meshHeight: meshHeight,
       points: pointsSIMD,
       primaryColors: primaryColorsSwiftUI,
       secondaryColors: secondaryColorsSwiftUI,
       background: backgroundColor,
       smoothsColors: smoothsColors,
       colorSpace: colorSpaceEnum,
-      borderRadius: borderRadius,
       isAnimated: isAnimated,
       animationDuration: animationDuration
     )

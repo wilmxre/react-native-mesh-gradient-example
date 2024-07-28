@@ -3,15 +3,14 @@ import SwiftUI
 
 @available(iOS 16.0, *)
 struct MeshGradientView: View {
-  var width: Int
-  var height: Int
+  var meshWidth: Int
+  var meshHeight: Int
   var points: [SIMD2<Float>]
   var primaryColors: [Color]
   var secondaryColors: [Color]
   var background: Color = .clear
   var smoothsColors: Bool = true
   var colorSpace: Gradient.ColorSpace = .device
-  var borderRadius: CGFloat
   var isAnimated: Bool
   var animationDuration: TimeInterval
 
@@ -21,15 +20,14 @@ struct MeshGradientView: View {
     ZStack {
       if #available(iOS 18.0, *) {
         MeshGradient(
-          width: 3,
-          height: 3,
+          width: meshWidth,
+          height: meshHeight,
           points: points,
           colors: isAnimating ? secondaryColors : primaryColors,
           background: background,
           smoothsColors: smoothsColors,
           colorSpace: colorSpace
         )
-        .cornerRadius(borderRadius)
         .onAppear {
           if isAnimated {
             withAnimation(

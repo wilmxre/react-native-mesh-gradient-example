@@ -2,15 +2,14 @@ import React from "react";
 import { requireNativeComponent, ViewProps } from "react-native";
 
 type MeshGradientProps = ViewProps & {
-  width: number;
-  height: number;
+  meshWidth: number;
+  meshHeight: number;
   points: number[][];
   primaryColors: string[];
   secondaryColors: string[];
   background?: string;
   smoothsColors?: boolean;
   colorSpace?: "device" | "perceptual";
-  borderRadius?: number;
   isAnimated?: boolean;
   animationDuration?: number;
 };

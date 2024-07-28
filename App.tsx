@@ -2,59 +2,57 @@ import React from "react";
 import { Dimensions, StyleSheet, Text, View } from "react-native";
 import MeshGradient from "./MeshGradient";
 
+const MATRIX_DIMENSION = 3;
+
 export default function App() {
-  const points = [
-    [0, 0],
-    [0.5, 0],
-    [1, 0],
-    [0, 0.5],
-    [0.5, 0.5],
-    [1, 0.5],
-    [0, 1],
-    [0.5, 1],
-    [1, 1],
-  ];
+  const points = [];
+  for (let i = 0; i < MATRIX_DIMENSION; i++) {
+    for (let j = 0; j < MATRIX_DIMENSION; j++) {
+      points.push([i / (MATRIX_DIMENSION - 1), j / (MATRIX_DIMENSION - 1)]);
+    }
+  }
 
   const primaryColors = [
-    "#fdab88",
-    "#db0c36",
-    "#ead292",
-    "#db0c36",
-    "#ead292",
-    "#ead292",
-    "#fdab88",
-    "#db0c36",
-    "#db0c36",
+    "#E68369",
+    "#E68369",
+    "#B692C2",
+    "#B692C2",
+    "#FBF6E2",
+    "#FBF6E2",
+    "#E68369",
+    "#E68369",
+    "#E68369",
   ];
 
   const secondaryColors = [
-    "#db0c36",
-    "#ead292",
-    "#db0c36",
-    "#db0c36",
-    "#fdab88",
-    "#ead292",
-    "#db0c36",
-    "#ead292",
-    "#db0c36",
+    "#694f96",
+    "#694f96",
+    "#E68369",
+    "#694f96",
+    "#a5bce8",
+    "#e4e8eb",
+    "#E68369",
+    "#a5bce8",
+    "#694f96",
   ];
 
   return (
     <View style={styles.container}>
       <MeshGradient
-        width={350}
-        height={350}
+        meshWidth={MATRIX_DIMENSION}
+        meshHeight={MATRIX_DIMENSION}
+        style={styles.meshContainer}
         points={points}
         primaryColors={primaryColors}
         secondaryColors={secondaryColors}
         background="#FFFFFF"
         smoothsColors={true}
         colorSpace="perceptual"
-        borderRadius={24}
         isAnimated={true}
-        animationDuration={1}
-      />
-      {/* <Text style={styles.text}>Mesh Gradient</Text> */}
+        animationDuration={5}
+      >
+        <Text style={styles.text}>Mesh Gradient</Text>
+      </MeshGradient>
     </View>
   );
 }
@@ -65,11 +63,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  meshContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: 400,
+    height: 400,
+    borderRadius: 12,
+  },
   text: {
-    position: "absolute",
-    fontSize: 72,
+    fontSize: 64,
     fontWeight: "bold",
     textAlign: "center",
-    color: "white",
+    color: "black",
   },
 });
