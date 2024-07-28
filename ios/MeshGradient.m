@@ -16,6 +16,7 @@ RCT_EXPORT_VIEW_PROPERTY(primaryColors, NSArray)
 RCT_EXPORT_VIEW_PROPERTY(secondaryColors, NSArray)
 RCT_EXPORT_VIEW_PROPERTY(background, NSString)
 RCT_EXPORT_VIEW_PROPERTY(smoothsColors, BOOL)
+RCT_EXPORT_VIEW_PROPERTY(borderRadius, CGFloat)
 RCT_EXPORT_VIEW_PROPERTY(colorSpace, NSString)
 RCT_EXPORT_VIEW_PROPERTY(animationDuration, NSInteger)
 @end

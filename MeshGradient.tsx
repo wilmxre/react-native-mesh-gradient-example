@@ -10,6 +10,7 @@ type MeshGradientProps = ViewProps & {
   background?: string;
   smoothsColors?: boolean;
   colorSpace?: "device" | "perceptual";
+  borderRadius?: number;
   isAnimated?: boolean;
   animationDuration?: number;
 };

@@ -11,6 +11,7 @@ struct MeshGradientView: View {
   var background: Color = .clear
   var smoothsColors: Bool = true
   var colorSpace: Gradient.ColorSpace = .device
+  var borderRadius: CGFloat
   var isAnimated: Bool
   var animationDuration: TimeInterval
 
@@ -27,16 +28,18 @@ struct MeshGradientView: View {
           background: background,
           smoothsColors: smoothsColors,
           colorSpace: colorSpace
-        ).ignoresSafeArea()
-          .onAppear {
-            if isAnimated {
-              withAnimation(
-                .easeInOut(duration: animationDuration).repeatForever(autoreverses: true)
-              ) {
-                isAnimating.toggle()
-              }
+        )
+        .cornerRadius(borderRadius)
+        .onAppear {
+          if isAnimated {
+            withAnimation(
+              .easeInOut(duration: animationDuration).repeatForever(
+                autoreverses: true)
+            ) {
+              isAnimating.toggle()
             }
           }
+        }
       } else {
         Text("MeshGradient is not available on this version of iOS.")
       }

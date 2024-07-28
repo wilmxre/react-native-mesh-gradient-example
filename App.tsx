@@ -18,43 +18,41 @@ export default function App() {
   const primaryColors = [
     "#fdab88",
     "#db0c36",
+    "#ead292",
     "#db0c36",
     "#ead292",
     "#ead292",
-    "#ead292",
-    "#7eb1a8",
-    "#7eb1a8",
-    "#7eb1a8",
+    "#fdab88",
+    "#db0c36",
+    "#db0c36",
   ];
 
   const secondaryColors = [
-    "#E3A5C7",
-    "#694F8E",
-    "#694F8E",
-    "#B692C2",
-    "#B692C2",
-    "#B692C2",
-    "#694F8E",
-    "#694F8E",
-    "#694F8E",
+    "#db0c36",
+    "#ead292",
+    "#db0c36",
+    "#db0c36",
+    "#fdab88",
+    "#ead292",
+    "#db0c36",
+    "#ead292",
+    "#db0c36",
   ];
-
-  const deviceWidth = Dimensions.get("screen").width;
-  const deviceHeight = Dimensions.get("screen").height;
 
   return (
     <View style={styles.container}>
       <MeshGradient
-        width={deviceWidth}
-        height={deviceHeight}
+        width={350}
+        height={350}
         points={points}
         primaryColors={primaryColors}
         secondaryColors={secondaryColors}
         background="#FFFFFF"
         smoothsColors={true}
         colorSpace="perceptual"
-        isAnimated={false}
-        animationDuration={5}
+        borderRadius={24}
+        isAnimated={true}
+        animationDuration={1}
       />
       {/* <Text style={styles.text}>Mesh Gradient</Text> */}
     </View>
