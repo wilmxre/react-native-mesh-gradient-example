@@ -23,7 +23,7 @@ struct MeshGradientView: View {
           width: 3,
           height: 3,
           points: points,
-          colors: isAnimating ? primaryColors : secondaryColors,
+          colors: isAnimating ? secondaryColors : primaryColors,
           background: background,
           smoothsColors: smoothsColors,
           colorSpace: colorSpace
