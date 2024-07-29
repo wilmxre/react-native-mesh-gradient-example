@@ -93,6 +93,12 @@ class MeshGradientUIView: UIView {
       updateView()
     }
   }
+  
+  @objc var borderRadius: CGFloat = 0 {
+    didSet {
+      updateView()
+    }
+  }
 
   private func colorFromHexString(hexString: NSString) -> UIColor {
     var cString: String = hexString.trimmingCharacters(
@@ -142,6 +148,7 @@ class MeshGradientUIView: UIView {
       background: backgroundColor,
       smoothsColors: smoothsColors,
       colorSpace: colorSpaceEnum,
+      borderRadius: borderRadius,
       isAnimated: isAnimated,
       animationDuration: animationDuration,
       animationType: animationType

@@ -9,8 +9,8 @@ export default function App() {
     [0.0, 0.0],
     [0.5, 0.0],
     [1.0, 0.0],
-    [0.0, 0.3],
-    [0.7, 0.9],
+    [0.0, 0.4],
+    [0.3, 0.6],
     [1.0, 0.5],
     [0.0, 1.0],
     [0.5, 1.0],
@@ -18,27 +18,27 @@ export default function App() {
   ];
 
   const primaryColors = [
-    "#E68369",
-    "#E68369",
-    "#B692C2",
-    "#B692C2",
-    "#FBF6E2",
-    "#FBF6E2",
-    "#E68369",
-    "#E68369",
-    "#E68369",
+    "#FF9F0A",
+    "#5E5CE6",
+    "#000000",
+    "#5E5CE6",
+    "#FF9F0A",
+    "#FF453A",
+    "#000000",
+    "#5E5CE6",
+    "#FF453A",
   ];
 
   const secondaryColors = [
     "#000000",
-    "#000000",
-    "#000000",
+    "#5E5CE6",
     "#FF9F0A",
+    "#FF453A",
     "#FF453A",
     "#FF9F0A",
     "#5E5CE6",
     "#000000",
-    "#30D158",
+    "#000000",
   ];
 
   return (
@@ -53,6 +53,7 @@ export default function App() {
         background="#FFFFFF"
         smoothsColors={true}
         colorSpace="perceptual"
+        borderRadius={24}
         isAnimated={true}
         animationDuration={5}
         animationType="easeInOut"
@@ -72,9 +73,8 @@ const styles = StyleSheet.create({
   meshContainer: {
     justifyContent: "center",
     alignItems: "center",
-    width: "110%",
-    height: "110%",
-    borderRadius: 12,
+    width: 350,
+    height: 350,
   },
   text: {
     fontSize: 72,

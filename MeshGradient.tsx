@@ -11,6 +11,7 @@ type MeshGradientProps = ViewProps & {
   smoothsColors?: boolean;
   colorSpace?: "device" | "perceptual";
   isAnimated?: boolean;
+  borderRadius?: number;
   animationDuration?: number;
   animationType?: "sine" | "easeInOut";
 };

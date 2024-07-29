@@ -9,8 +9,9 @@ struct MeshGradientView: View {
   var primaryColors: [Color]
   var secondaryColors: [Color]
   var background: Color = .clear
-  var smoothsColors: Bool = true
-  var colorSpace: Gradient.ColorSpace = .device
+  var smoothsColors: Bool
+  var colorSpace: Gradient.ColorSpace
+  var borderRadius: CGFloat
   var isAnimated: Bool
   var animationDuration: TimeInterval
   var animationType: String
@@ -60,6 +61,7 @@ struct MeshGradientView: View {
           smoothsColors: smoothsColors,
           colorSpace: colorSpace
         )
+        .cornerRadius(borderRadius)
         .onAppear {
           if isAnimated {
             animationType == "sine"
